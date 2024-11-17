@@ -122,3 +122,41 @@ def component():
 
 
     return pd.DataFrame(data, index=[0])
+
+df = component()
+data = input_preprocessing(df)
+sample_df = pd.DataFrame(data=sample,index=[0])
+sample_df[sample_df.columns] = 0
+sample_df[data.columns] = data
+ss = pickle.load(open("./models/scale.sav","rb"))
+model = pickle.load(open("./models/model.sav","rb"))
+prediction = round(np.exp(model.predict(ss.transform(sample_df))[0]))
+column1,column2 = tab1.columns(2)
+_,resultbutton,_ = tab5.columns([1,1,1])
+if resultbutton.button(" ", type = "secondary"):
+    tab_result.image(chart(model,ss, sample_df,prediction), use_column_width="auto")
+    click_element('tab-2')
+pop_button = """<button id = "button-17" class="button-17" role="button"> ❔ Did You Know</button>"""
+_,home,_ = comps.columns([1,2,1])
+_,col2,_ = comps.columns([1,10,1])
+col2.markdown(pop_button, unsafe_allow_html=True)
+pop = """
+<div id="popup" class="DidYouKnow_root">
+<p class="DidYouKnow_title TextNew" style="font-size: 20px;"> ❔ Did you know</p>
+    <p id="popupText" class="DidYouKnow_content TextNew"><span>
+    Each year, human activities release over 40 billion metric tons of carbon dioxide into the atmosphere, contributing to climate change.
+    </span></p>
+</div>
+"""
+col2.markdown(pop, unsafe_allow_html=True)
+if home.button("🏡"):
+    click_element('tab-0')
+_,resultmid,_ = result.columns([1,2,1])
+tree_count = round(prediction / 411.4)
+tab_result.markdown(f"""You owe nature <b>{tree_count}</b> tree{'s' if tree_count > 1 else ''} monthly. <br> {f"<a href='https://www.tema.org.tr/en/homepage' id = 'button-17' class='button-17' role='button'> 🌳 Proceed to offset 🌳</a>" if tree_count > 0 else ""}""",  unsafe_allow_html=True)
+if resultmid.button("  ", type="secondary"):
+    click_element('tab-1')
+with open("./style/footer.html", "r", encoding="utf-8") as footer:
+    footer_html = f"""{footer.read()}"""
+    st.markdown(footer_html, unsafe_allow_html=True)
+script()
