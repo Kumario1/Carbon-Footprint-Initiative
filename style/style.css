@@ -7,8 +7,15 @@ body {{
     padding: 0;
     height: 100vh;
     }}
-    p {{
-        color: black;
-        font-family: "Google Sans",Roboto,Arial,sans-serif;
-        font-size: 20px;
+p {{
+    color: black;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 20px;
+    }}
+div[data-testid="StyledLinkIconContainer"]> a, div[data-testid="StyledLinkIconContainer"]> a > svg {{background-color: rgba(255, 255, 255,0); stroke: rgba(0, 0, 0, 0);}}
+#popup {{
+        display: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        overflow: hidden;
         }}
