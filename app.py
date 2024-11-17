@@ -31,17 +31,20 @@ def script():
         open_script = f"""<script>{scripts.read()}</script> """
         html(open_script, width=0, height=0)
 
+
 left, middle, right = st.columns([2,3.5,2])
 main, comps , result = middle.tabs([" ", " ", " "])
 
-
 with open("./style/main.md", "r", encoding="utf-8") as main_page:
     main.markdown(f"""{main_page.read()}""")
+
 _,but,_ = main.columns([1,2,1])
-if but.button("Proceed to enter data", type="primary"):
+if but.button("Proceed to enter data"):
     click_element('tab-1')
+
 tab1, tab2, tab3, tab4, tab5 = comps.tabs(["👨 Personal","🏎️ Travel","🚮 Waste","⚡️ Energy","💰 Consumption"])
 tab_result,_ = result.tabs([" "," "])
+
 def component():
     tab1col1, tab1col2 = tab1.columns(2)
     height = tab1col1.number_input("Height",0,251, value=None, placeholder="160", help="in cm")
@@ -59,6 +62,7 @@ def component():
                                                                                               Vegetarian: Diet excludes meat but includes plant-based foods.\n
                                                                                               Vegan: Avoids all animal products, including meat, dairy, and eggs.""")
     social = tab1.selectbox('Social Activity', ['never', 'often', 'sometimes'], help="How often do you go out?")
+
     transport = tab2.selectbox('Transportation', ['public', 'private', 'walk/bicycle'],
                                help="Which transportation method do you prefer the most?")
     if transport == "private":
@@ -66,23 +70,55 @@ def component():
                                       help="What type of fuel do you use in your car?")
     else:
         vehicle_type = "None"
+
     if transport == "walk/bicycle":
         vehicle_km = 0
     else:
         vehicle_km = tab2.slider('What is the monthly distance traveled by the vehicle in kilometers?', 0, 5000, 0, disabled=False)
+
     air_travel = tab2.selectbox('How often did you fly last month?', ['never', 'rarely', 'frequently', 'very frequently'], help= """
                                                                                                                              Never: I didn't travel by plane.\n
                                                                                                                              Rarely: Around 1-4 Hours.\n
                                                                                                                              Frequently: Around 5 - 10 Hours.\n
                                                                                                                              Very Frequently: Around 10+ Hours. """)
+
     waste_bag = tab3.selectbox('What is the size of your waste bag?', ['small', 'medium', 'large', 'extra large'])
     waste_count = tab3.slider('How many waste bags do you trash out in a week?', 0, 10, 0)
     recycle = tab3.multiselect('Do you recycle any materials below?', ['Plastic', 'Paper', 'Metal', 'Glass'])
+
     heating_energy = tab4.selectbox('What power source do you use for heating?', ['natural gas', 'electricity', 'wood', 'coal'])
+
     for_cooking = tab4.multiselect('What cooking systems do you use?', ['microwave', 'oven', 'grill', 'airfryer', 'stove'])
     energy_efficiency = tab4.selectbox('Do you consider the energy efficiency of electronic devices?', ['No', 'Yes', 'Sometimes' ])
     daily_tv_pc = tab4.slider('How many hours a day do you spend in front of your PC/TV?', 0, 24, 0)
     internet_daily = tab4.slider('What is your daily internet usage in hours?', 0, 24, 0)
+
     shower = tab5.selectbox('How often do you take a shower?', ['daily', 'twice a day', 'more frequently', 'less frequently'])
     grocery_bill = tab5.slider('Monthly grocery spending in $', 0, 500, 0)
     clothes_monthly = tab5.slider('How many clothes do you buy monthly?', 0, 30, 0)
+
+    data = {'Body Type': body_type,
+            "Sex": sex,
+            'Diet': diet,
+            "How Often Shower": shower,
+            "Heating Energy Source": heating_energy,
+            "Transport": transport,
+            "Social Activity": social,
+            'Monthly Grocery Bill': grocery_bill,
+            "Frequency of Traveling by Air": air_travel,
+            "Vehicle Monthly Distance Km": vehicle_km,
+            "Waste Bag Size": waste_bag,
+            "Waste Bag Weekly Count": waste_count,
+            "How Long TV PC Daily Hour": daily_tv_pc,
+            "Vehicle Type": vehicle_type,
+            "How Many New Clothes Monthly": clothes_monthly,
+            "How Long Internet Daily Hour": internet_daily,
+            "Energy efficiency": energy_efficiency
+            }
+    data.update({f"Cooking_with_{x}": y for x, y in
+                 dict(zip(for_cooking, np.ones(len(for_cooking)))).items()})
+    data.update({f"Do You Recyle_{x}": y for x, y in
+                 dict(zip(recycle, np.ones(len(recycle)))).items()})
+
+
+    return pd.DataFrame(data, index=[0])
