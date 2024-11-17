@@ -1,4 +1,4 @@
-#!/Users/princekumar/Documents/Carbon-footprint-calc1/venv/bin/python3.10
+#!/Users/princekumar/Documents/Carbon-Footprint-Initiative/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
