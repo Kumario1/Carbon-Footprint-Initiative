@@ -1,4 +1,4 @@
-<a target="_blank" href="https://savethetrees.streamlit.app/"><img src="https://github.com/Kumario1/Carbon-Footprint-Initiative/blob/main/media/background_min.jpg?raw=true"></img></a>
+<a target="_blank" href="https://savethetree.streamlit.app/"><img src="https://github.com/Kumario1/Carbon-Footprint-Initiative/blob/main/media/background_min.jpg?raw=true"></img></a>
 
 ---
 ## Inspiration 💭
@@ -13,7 +13,7 @@ This app helps you calculate your personal carbon footprint by analyzing your da
 ## Usage Instructions 🌳
 This project allows for the calculation of a user's carbon footprint based on different factors, such as travel habits, energy usage, consumption, waste, and more.
 1. **Access the Calculator** 
-   - Visit the calculator through this link: *https://savethetrees.streamlit.app*.
+   - Visit the calculator through this link: *https://savethetree.streamlit.app*.
 2. **Explore the Main Page**
    - The main page introduces our initiative, explains why reducing carbon footprints matters, while also outlining the benefits of doing so.
 3. **Proceed to the Calculator**
