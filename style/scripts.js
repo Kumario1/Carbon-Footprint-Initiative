@@ -10,6 +10,12 @@ function hidePopup() {
     window.parent.document.getElementById('popup').style.display = 'none';
     window.parent.document.getElementById('button-17').style.display = 'block';
 };
+
+var texts = [
+    "blank"
+];
+
+
 function changeText() {
     var randomIndex = Math.floor(Math.random() * texts.length);
     var newText = texts[randomIndex];
