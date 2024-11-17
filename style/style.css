@@ -1,0 +1,14 @@
+body {{
+    background-image: url("data:image/png;base64,{background}");        
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    }}
+    p {{
+        color: black;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        font-size: 20px;
+        }}
