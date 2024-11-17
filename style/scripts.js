@@ -26,3 +26,28 @@ if (!window.parent.document.querySelector('[class^=icon2]')) {
 
     button.appendChild(newDiv);
 };
+if (!window.parent.document.querySelector('[class^=icon3]')) {
+    var newDiv2 = document.createElement('span');
+            
+    newDiv2.className  = 'icon3';
+
+    var button2 = window.parent.document.querySelector('div[id^=tabs-bui][id$=-tabpanel-2] > div > div > div > div > div > div > div> div > div > div > button[kind = "secondary"] > div');
+
+    button2.appendChild(newDiv2);
+};
+                        
+function checkScreenWidth() {
+  var screenWidth = window.innerWidth || window.parent.document.documentElement.clientWidth || window.parent.document.body.clientWidth;
+
+  if (screenWidth <= 600) {
+            window.parent.document.getElementById('project-copyright').style.display = 'none';
+            window.parent.document.getElementById('team-members').style.marginRight = "0px";
+			Array.from(window.parent.document.querySelectorAll('button[data-baseweb="tab"] > div > p')).forEach(button => button.style.fontSize = '10px');
+  } else {
+            window.parent.document.getElementById('team-members').style.marginRight = "20px";
+            window.parent.document.getElementById('project-copyright').style.display = 'block';
+  }
+}
+
+window.onload = checkScreenWidth;
+window.onresize = checkScreenWidth;
