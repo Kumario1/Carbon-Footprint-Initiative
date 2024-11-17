@@ -6,3 +6,19 @@
 ## What it does
 **This app helps you calculate your personal carbon footprint by analyzing your daily activities, such as energy use, travel, and consumption habits. It provides actionable insights on how to reduce your impact, adopt eco-friendly practices, and contribute to a healthier planet. With easy-to-follow recommendations, it empowers you to make a real difference in fighting climate change.**
 ## How we built it
+
+##  Backend  
+1. **Data Handling with Pandas:**  
+   - We utilized **Pandas** for efficient data manipulation and analysis, enabling the application to process and organize complex datasets with ease.  
+2. **NumPy for Numeric Operations:**  
+   - With **NumPy**, we performed advanced numerical operations and array manipulations, ensuring the accuracy and efficiency of all carbon footprint calculations.  
+3. **Machine Learning with scikit-learn:**  
+   - Implemented **scikit-learn** machine learning algorithms to analyze user data and provide tailored recommendations for reducing emissions based on patterns and predictions.  
+4. **IO Operations:**  
+   - Leveraged Python's built-in `io` library to handle input/output operations, ensuring smooth data communication between the app's components.  
+5. **Data Visualization:**  
+   - Used **Matplotlib** to create clear and engaging visual representations, such as graphs and charts, helping users understand their carbon footprint and progress visually.  
+6. **Image Processing with Pillow:**  
+   - Integrated **Pillow** to process and enhance image assets, improving the app's visual elements and user engagement.  
+7. **Base64 Encoding/Decoding:**  
+   - Incorporated `base64` to encode and decode binary image data, allowing for seamless storage and display of images within the application.  
