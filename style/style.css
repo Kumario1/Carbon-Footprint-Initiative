@@ -7,8 +7,8 @@ body {{
     padding: 0;
     height: 100vh;
     }}
-    p {{
-        color: black;
-        font-family: "Google Sans",Roboto,Arial,sans-serif;
-        font-size: 20px;
-        }}
+p {{
+    color: black;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 20px;
+    }}
