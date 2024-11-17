@@ -21,4 +21,14 @@
 6. **Image Processing with Pillow:**  
    - Integrated **Pillow** to process and enhance image assets, improving the app's visual elements and user engagement.  
 7. **Base64 Encoding/Decoding:**  
-   - Incorporated `base64` to encode and decode binary image data, allowing for seamless storage and display of images within the application.  
+   - Incorporated `base64` to encode and decode binary image data, allowing for seamless storage and display of images within the application.
+
+---
+## Frontend 
+1. **Streamlit Setup:**  
+   - Built the frontend using **Streamlit**, a Python-based framework, to provide an interactive and responsive web application interface.  
+2. **User Interface Design:**  
+   - Designed an intuitive, user-friendly interface using **Streamlit components**, supplemented with custom **CSS** and **JavaScript**, ensuring smooth navigation and an engaging user experience.  
+3. **Testing:**  
+   - Conducted rigorous testing of both the backend and frontend components to guarantee functionality, accuracy, and seamless user interaction.  
+---
