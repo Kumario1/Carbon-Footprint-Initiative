@@ -98,4 +98,66 @@ These accomplishments not only reflect our technical expertise but also undersco
 ---
 ## What's next for Carbon Catalyst ⚡
 Next, we plan to expand the app with advanced features like localized recommendations using real-time data and gamification elements to encourage sustainable habits. Our goal is to inspire even greater environmental action.
+# 🌳 How to Install the Save The Tree App on Your Own Machine 🌳
+
+Follow these steps to set up the **Save The Tree** app locally on your machine:
+
+---
+
+## Prerequisites
+1. **Python Installation**
+   - Ensure Python 3.10 is installed
+   - [Download Python](https://www.python.org/downloads/).
+
+2. **Pip Installation**
+   - `pip` should be available with Python for package management.
+   - To verify: Run `pip --version` in your terminal or command prompt.
+
+3. **Git Installation**
+   - Install Git to clone the repository.
+   - [Download Git](https://git-scm.com/downloads).
+
+---
+
+## Installation Steps
+
+### 1. Clone the Repository
+Open your terminal or command prompt and run the following command to clone the repository:
+
+git clone https://github.com/Kumario1/Carbon-Footprint-Initiative.git
+
+### 1. Navigate to the Project Directory
+Navigate to the cloned project directory:
+cd Carbon-Footprint-Initiative
+
+### 2. Navigate to the Project Directory
+Navigate to the cloned project directory:
+cd Carbon-Footprint-Initiative
+
+### 3. Create a Virtual Environment (Optional but Recommended)
+Create and activate a virtual environment to isolate dependencies:
+#### Mac/Linux
+python3 -m venv venv
+source venv/bin/activat
+
+#### Windows
+python -m venv venv
+venv\Scripts\activate
+
+### 4. Install Dependencies
+Install the required Python packages listed in requirements.txt:
+pip install -r requirements.txt
+
+### Run the App 
+Type in terminal:
+streamlit run app.py
+
+
+
+
+
+
+
+
+
 
